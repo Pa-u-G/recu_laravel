@@ -18,10 +18,14 @@ boton.addEventListener("click", (e)=>{
         if(data["id"]){
             sessionStorage.setItem('id', data["id"]);
             sessionStorage.setItem('email', data["email"]);
-            window.location.href = "index.html";
+            sessionStorage.setItem('name', data["name"]);
+            window.location.href = "user.html";
 
+        } else {
+            let error = document.getElementById("error")
+            error.innerHTML = data["message"]
+    
+            error.style.color = "red"
         }
-        console.log(sessionStorage.getItem('id'))
-        console.log(sessionStorage.getItem('email'))
     })
 })

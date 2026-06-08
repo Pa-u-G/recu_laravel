@@ -83,7 +83,7 @@ class ProductoController extends Controller
 
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json([
-                'message' => 'Credencials incorrectes'
+                'message' => 'Esta mal'
             ], 401);
         }
         return response()->json($user);
